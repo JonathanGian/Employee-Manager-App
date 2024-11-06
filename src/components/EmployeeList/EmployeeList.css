@@ -1,4 +1,5 @@
 .EmployeeList{
-    
   
+    display: flex;
+    flex-wrap: wrap;
   }

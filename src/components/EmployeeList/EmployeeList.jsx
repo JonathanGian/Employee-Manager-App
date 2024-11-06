@@ -2,9 +2,9 @@ import React from "react";
 import EmployeeCard from "../EmployeeCard/EmployeeCard.jsx";
 import "./EmployeeList.css";
 import { employees } from "../../data/employees.js";
-import { useState } from "react";
 
-export function EmployeeList() {
+
+export function EmployeeListno() {
 
   return (
     <div className="EmployeeList">
@@ -12,7 +12,7 @@ export function EmployeeList() {
         <EmployeeCard
           key={employee.id}          
           name={employee.name}
-          initRole={employee.role}       // Pass initial role as `initRole`
+          initRole={employee.role} // Pass initial role as `initRole`
           sector={employee.sector}
           age={employee.age}             
           startDate={employee.startDate}
@@ -23,4 +23,4 @@ export function EmployeeList() {
   );
 }
 
-export default EmployeeList;
+export default EmployeeListno;

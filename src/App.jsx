@@ -1,6 +1,6 @@
 import './App.css'
 import { Footer } from './components/Footer/Footer.jsx'
-import EmployeeList from "./components/EmployeeList/EmployeeList.jsx"
+import EmployeeList from "./components/EmployeeList/EmployeeListUsed.jsx"
 import { Header } from './components/Header/Header.jsx'
 import { useState } from 'react'
 
@@ -12,17 +12,21 @@ function App() {
   }
   return (
     <div className='app'>
+      <Header/>
     <h1>Employee Manager App</h1>
     {isLoggedin ? (
       <div>
+        <button onClick={loginHandler}>Log Out</button>
       <EmployeeList/>
 
-      <button onClick={loginHandler}>Log Out</button>
+      <Footer/>  
   </div>
     ):(
     <button onClick={loginHandler}>Log In</button>)}
+    <Footer/>
     </div>
   )
+    
 }
 
 export default App
