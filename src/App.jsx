@@ -13,13 +13,11 @@ function App() {
   return (
     <div className='app'>
       <Header/>
-    <h1>Employee Manager App</h1>
     {isLoggedin ? (
       <div>
         <button onClick={loginHandler}>Log Out</button>
       <EmployeeList/>
 
-      <Footer/>  
   </div>
     ):(
     <button onClick={loginHandler}>Log In</button>)}
