@@ -53,7 +53,7 @@ function EmployeeCard({initRole,startDate,name,role,sector,email}) {
 
   return (
     <div className="EmployeeCard">
-      <img src={`https://robohash.org/${name}/?set=set5`}/>
+      <img src={`https://robohash.org/${name}/?set=set5`} alt="Profile"/>
       <h2>{name} {promotionRole === "Team Lead" && <span>⭐</span>}</h2>
       <p>Role: {role} {promotionRole === "Team Lead" && "(Team Lead)"}</p>
       <p>Sector: {sector}</p>

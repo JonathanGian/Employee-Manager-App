@@ -1,0 +1,11 @@
+.changeForm{
+    padding: 5px;
+    display: grid;
+    gap: 10px;
+    justify-items: center;
+}
+input{
+    background-color: rgb(243, 194, 59);
+    color: black;
+    padding: 5px;
+}

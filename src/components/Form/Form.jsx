@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import "./Form.css"
 const Form = ({role, sector, email}) => {
     const [formData, setFormData] = useState({
         role,
@@ -13,7 +13,7 @@ const Form = ({role, sector, email}) => {
 
     return (
         <div>
-            <form>
+            <form className="changeForm">
                 <input 
                 type="text" 
                 name="role" 
@@ -23,11 +23,11 @@ const Form = ({role, sector, email}) => {
                 <input 
                 type="text" 
                 name="sector" 
-                value={formData.department} 
+                value={formData.sector} 
                 onChange={handleChange}  />
 
                 <input 
-                type="text" 
+                type="email" 
                 name="email" 
                 value={formData.email} 
                 onChange={handleChange}  />
