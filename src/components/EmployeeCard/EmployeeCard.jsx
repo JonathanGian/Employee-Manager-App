@@ -1,9 +1,12 @@
 import { useState } from "react";
 import "./EmployeeCard.css";
 import Button from "../Button/Button";
+import Form from "../Form/Form";
 
 function EmployeeCard({initRole,startDate,name,role,sector,email}) {
   const [promotionRole, setRole] = useState(initRole);
+  const [toggleFormEdit, setToggleFormEdit] = useState(false);
+
 
   const calculateYearsWorked = () => {
     if (!startDate) return "N/A"; // Return 'N/A' if no startDate is provided
@@ -43,6 +46,7 @@ function EmployeeCard({initRole,startDate,name,role,sector,email}) {
       setRole("Team Lead");
     }
   };
+  
 
   // Calculate years worked
   const yearsWorked = calculateYearsWorked();
@@ -60,9 +64,19 @@ function EmployeeCard({initRole,startDate,name,role,sector,email}) {
       <Button 
       onClick={clickHandler} 
       text={promotionRole === "Team Lead" ? "Demote from Team Lead" : "Promote to Team Lead"}
-      role = {promotionRole ? "primary":"secondary"}
+      role = {promotionRole ? "primary":"secondary"}/>
+     
+    <Button onClick={()=>setToggleFormEdit(!toggleFormEdit)} text={toggleFormEdit ? "Save":"Edit"} />
+    {toggleFormEdit && (
+      <Form
+      role={role}
+      sector={sector}
+      email={email}
       />
+    )}
+    
     </div>
+
   );
 }
 
