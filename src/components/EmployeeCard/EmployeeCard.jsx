@@ -1,13 +1,14 @@
 import { useState } from "react";
 import "./EmployeeCard.css";
+import Button from "../Button/Button";
 
-function EmployeeCard(props) {
-  const [promotionRole, setRole] = useState(props.initRole);
+function EmployeeCard({initRole,startDate,name,role,sector,email}) {
+  const [promotionRole, setRole] = useState(initRole);
 
   const calculateYearsWorked = () => {
-    if (!props.startDate) return "N/A"; // Return 'N/A' if no startDate is provided
+    if (!startDate) return "N/A"; // Return 'N/A' if no startDate is provided
 
-    const startYear = new Date(props.startDate).getFullYear(); // Extract the year from startDate
+    const startYear = new Date(startDate).getFullYear(); // Extract the year from startDate
     const currentYear = new Date().getFullYear(); // Get the current year
 
     const yearsWorked = currentYear - startYear; 
@@ -37,7 +38,7 @@ function EmployeeCard(props) {
 
   const clickHandler = () => {
     if (promotionRole === "Team Lead") {
-      setRole(props.initRole);
+      setRole(initRole);
     } else {
       setRole("Team Lead");
     }
@@ -48,16 +49,19 @@ function EmployeeCard(props) {
 
   return (
     <div className="EmployeeCard">
-      <h2>{props.name} {promotionRole === "Team Lead" && <span>⭐</span>}</h2>
-      <p>Role: {props.role} {promotionRole === "Team Lead" && "(Team Lead)"}</p>
-      <p>Sector: {props.sector}</p>
-      <p>Start Date: {props.startDate}</p>
-      <p>Email: {props.email}</p>
+      <img src={`https://robohash.org/${name}/?set=set5`}/>
+      <h2>{name} {promotionRole === "Team Lead" && <span>⭐</span>}</h2>
+      <p>Role: {role} {promotionRole === "Team Lead" && "(Team Lead)"}</p>
+      <p>Sector: {sector}</p>
+      <p>Start Date: {startDate}</p>
+      <p>Email: {email}</p>
       <p>Years Employed: {yearsWorked}</p>
       {displayReminders(yearsWorked)} {/* Display reminders here */}
-      <button onClick={clickHandler}>
-        {promotionRole === "Team Lead" ? "Demote from Team Lead" : "Promote to Team Lead"}
-      </button>
+      <Button 
+      onClick={clickHandler} 
+      text={promotionRole === "Team Lead" ? "Demote from Team Lead" : "Promote to Team Lead"}
+      role = {promotionRole ? "primary":"secondary"}
+      />
     </div>
   );
 }
