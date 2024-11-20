@@ -9,3 +9,17 @@ input{
     color: black;
     padding: 5px;
 }
+.notification {
+    background-color: #4caf50; /* Green background */
+    color: white; /* White text */
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    text-align: center;
+    position: fixed; /* Fixed position */
+    top: 20px; /* Adjust as needed */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Centering trick */
+    z-index: 1000; /* Ensure it appears on top */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
