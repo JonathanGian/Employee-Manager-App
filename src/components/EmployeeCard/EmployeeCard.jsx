@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./EmployeeCard.css";
 import Button from "../Button/Button";
-import Form from "../Form/Form";
+import CardForm from "../Form/CardForm";
 
 function EmployeeCard({initRole,startDate,name,role,sector,email}) {
   const [formData, setFormData] = useState({role, sector, email});
@@ -79,7 +79,7 @@ function EmployeeCard({initRole,startDate,name,role,sector,email}) {
       role = {promotionRole ? "primary":"secondary"}/>
      
     <Button onClick={toggleEdit} text={isEditing ? "Save":"Edit"} />
-    {isEditing && <Form formData={formData} onFormChange={updateFormData}/>
+    {isEditing && <CardForm formData={formData} onFormChange={updateFormData}/>
       }
     
     </div>

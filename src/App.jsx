@@ -1,30 +1,16 @@
 import './App.css'
-import { Footer } from './components/Footer/Footer.jsx'
-import EmployeeList from "./components/EmployeeList/EmployeeListUsed.jsx"
-import { Header } from './components/Header/Header.jsx'
-import { useState } from 'react'
+import { RouterProvider } from "react-router-dom";
+import { router } from "./routes/appRoutes";
 
 function App() {
-  const [isLoggedin, setIsLoggedIn] = useState(false);
-
-  const loginHandler = ()=>{
-    setIsLoggedIn(!isLoggedin)
-  }
   return (
-    <div className='app'>
-      <Header/>
-    {isLoggedin ? (
-      <div>
-        <button onClick={loginHandler}>Log Out</button>
-      <EmployeeList/>
-
-  </div>
-    ):(
-    <button onClick={loginHandler}>Log In</button>)}
-    <Footer/>
-    </div>
-  )
-    
+    <RouterProvider
+      router={router}
+      future={{
+        v7_startTransition: true,
+      }}
+    />
+  );
 }
 
-export default App
+export default App;

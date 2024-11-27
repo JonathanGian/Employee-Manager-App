@@ -1,13 +1,25 @@
 .changeForm{
     padding: 5px;
     display: grid;
-    gap: 10px;
+    grid-template-columns: 1fr 1fr ;
+    grid-template-rows: auto auto;
+    column-gap: 10px;
+    align-items: center;
     justify-items: center;
 }
-input{
-    background-color: rgb(243, 194, 59);
+.changeForm div{
+     display: flex;
+    flex-direction: column; 
+    
+}
+#role,#email,#sector{
+    background-color: rgb(142, 180, 141);
     color: black;
     padding: 5px;
+}
+
+label{
+    color: #261313;
 }
 .notification {
     background-color: #4caf50; /* Green background */

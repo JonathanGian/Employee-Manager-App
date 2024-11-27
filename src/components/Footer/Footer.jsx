@@ -1,6 +1,6 @@
 import "./Footer.css"
 
-export function Footer() {
+function Footer() {
     return (
         <footer>
             <p>Copywrite©Jonathan Gian 2024</p>
@@ -8,3 +8,4 @@ export function Footer() {
         </footer>
     )
 }
+export default Footer;

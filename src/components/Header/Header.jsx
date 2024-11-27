@@ -1,13 +1,18 @@
+import { Link, NavLink } from "react-router-dom";
 import "./Header.css"
 
-export function Header() {
+function Header() {
     return (
         <header>
-            <h2>Employee Manager App</h2>
+            <nav>
+            <h2><Link to="/">Employee Manager App</Link></h2>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
+                <li><NavLink to="/employees">Employees</NavLink></li>
+                <li><NavLink to="/form">Add New</NavLink></li>
+                
             </ul>
+            </nav>
         </header>
     )
 }
+export default Header;
