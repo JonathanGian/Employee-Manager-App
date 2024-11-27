@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import EmployeeCard from "../EmployeeCard/EmployeeCard"
+/* import React, { useEffect, useState } from "react";
+import EmployeeCard from "./../EmployeeCard/EmployeeCard";
 import "./EmployeeList.css"
 
 const EmployeeList = () => {
@@ -11,7 +11,6 @@ const EmployeeList = () => {
   useEffect(() => {
     fetch("http://localhost:3001/employees") // Adjust the endpoint as necessary
       .then((response) => {
-       
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
@@ -30,7 +29,6 @@ const EmployeeList = () => {
 
   // Function to handle saving changes for a specific employee
   const saveEmployeeChanges = (id, updatedData) => {
-    
     fetch(`http://localhost:3001/employees/${id}`, {
       method: "PUT",
       headers: {
@@ -39,9 +37,6 @@ const EmployeeList = () => {
       body: JSON.stringify(updatedData),
     })
       .then((response) => {
-        
-        console.log("Raw response:", response);
-        console.log("API Response Status:", response.status);
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
@@ -55,7 +50,7 @@ const EmployeeList = () => {
             employee.id === id ? updatedEmployee : employee
           )
         );
-        console.log("Employee updated successfully:", updatedEmployee);
+        console.log("Employee updated successfully:", updatedData);
       })
       .catch((err) => {
         console.error("Failed to update employee:", err);
@@ -91,4 +86,19 @@ const EmployeeList = () => {
   );
 };
 
-export default EmployeeList; 
+export default EmployeeList;
+
+/* 
+    return (
+      <div className="EmployeeList">
+        {employees.map((employee) => (
+          <EmployeeCard
+            key={employee.id}          
+            {...employee}
+          />
+        ))}
+      </div>
+    );
+  }
+  */
+  

@@ -2,8 +2,9 @@ import { createBrowserRouter } from "react-router-dom";
 import Root from "../pages/Root";
 import ErrorPage from "../pages/ErrorPage";
 import Login from "../pages/Login";
-import EmployeeList from "../components/EmployeeList/EmployeeListUsed";
+import EmployeeList from "../components/EmployeeList/EmployeeList";
 import Form from "../pages/Form";
+import List from "../pages/List";
 
 export const router = createBrowserRouter(
     [
@@ -14,7 +15,7 @@ export const router = createBrowserRouter(
         children: [
           { path: "/", element: <Login /> },
           { path: "/login", element: <Login /> },
-          { path: "/employees", element: <EmployeeList /> },
+          { path: "/list", element: <List /> },
           { path: "/form", element: <Form /> },
         ],
       },

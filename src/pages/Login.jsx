@@ -1,7 +1,3 @@
-import Footer from "../components/Footer/Footer.jsx";
-import Header from "../components/Header/Header.jsx";
-import EmployeeList from '../components/EmployeeList/EmployeeListUsed'
-
 import { useState } from 'react'
 import Button from "../components/Button/Button.jsx";
 import { Link } from "react-router-dom";

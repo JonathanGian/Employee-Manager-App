@@ -1,26 +1,33 @@
-.changeForm{
-    padding: 5px;
+form {
     display: grid;
-    grid-template-columns: 1fr 1fr ;
-    grid-template-rows: auto auto;
-    column-gap: 10px;
-    align-items: center;
-    justify-items: center;
-}
-.changeForm div{
-     display: flex;
-    flex-direction: column; 
-    
-}
-#role,#email,#sector{
-    background-color: rgb(142, 180, 141);
-    color: black;
+    grid-template-columns: auto 1fr; /* Label in first column, input in second column */
+    column-gap: 15px; /* Space between label and input */
+    row-gap: 10px; /* Space between rows */
+    align-items: center; /* Vertically align items */
+  }
+  
+  form div {
+    display: contents; /* Makes the div's children participate in the grid layout */
+  }
+  
+  label {
+    text-align: right; /* Align label text to the right */
+    margin-right: 5px; /* Add a small gap for better spacing */
+  }
+  
+  input {
     padding: 5px;
-}
-
-label{
-    color: #261313;
-}
+    background-color: rgb(22, 25, 21);
+    color: whitesmoke;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%; /* Ensures input takes up full column width */
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: #4caf50; /* Highlight the input when focused */
+  }
 .notification {
     background-color: #4caf50; /* Green background */
     color: white; /* White text */
