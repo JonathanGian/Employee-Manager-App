@@ -1,42 +1,8 @@
-/* General Header Styling */
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Transparent black background */
-    color: white;
-    padding: 10px 0;
-    text-align: center;
-    z-index: 1000;
-  }
+h2{
+  text-align: center;
+}
+.nav-menu{
   
-  header h2 {
-    margin: 0;
-    font-size: 2em;
-    font-weight: bold;
-    letter-spacing: 1.5px;
-  }
-  
-  /* Style for the Navigation List */
-  ul {
-    display: flex;
-    justify-content: center; /* Centers the links horizontally */
-    list-style: none;
-    padding: 0;
-    margin-top: 10px;
-  }
-  
-  li {
-    margin: 0 15px; /* Space between each link */
-  }
-  
-  a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.1em;
-    transition: color 0.3s ease;
-  }
-  
-  a:hover {
-    color: #4CAF50; /* Highlight color for links when hovered */
-  }
+  color: whitesmoke;
+  text-decoration: none;
+}

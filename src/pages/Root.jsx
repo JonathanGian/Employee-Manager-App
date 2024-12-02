@@ -1,25 +1,49 @@
-import { Outlet } from "react-router-dom";
+import { Outlet} from "react-router-dom";
+import { useState } from "react";
+import { Box } from '@mui/material';
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
-import "./Root.css"
 import { employees as initialData} from "../data/test";
-import { useState } from "react";
-const Root = () => {
-    const[employees, setEmployees]= useState(initialData);
 
-    const addEmployee = (newEmployee) => {
-        setEmployees((prev) => {
+
+const Root = () => {
+  const [employees, setEmployees] = useState(initialData);
+
+  const addEmployee = (newEmployee) => {
+      setEmployees((prev) => {
           console.log("New employee added:", newEmployee);
           return [...prev, newEmployee];
-        });
-      };
-    return (
-        <div id="rootpage">
-            <Header/>
-            <Outlet context={{employees, addEmployee}}/>
-            <Footer/>
-      </div>
-    );
-};
+      });
+  };
+      return (
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            minHeight: '100vh', 
+          }}
+        >
+     
+          <Header />
+    
+          {/* Main Content */}
+          <Box
+            component="main"
+            sx={{
+              flex: 1, 
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              padding: 2,
+              backgroundColor: '#f5f5f5',
+            }}
+          >
+          <Outlet/>
+          </Box>
+    
+          <Footer />
+        </Box>
+      );
+    }
 
 export default Root;

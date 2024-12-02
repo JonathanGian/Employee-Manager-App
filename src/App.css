@@ -4,24 +4,5 @@
   box-sizing: border-box;
 }
 
-.app {
-  padding-top: 100px;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; 
-  align-items: center; /* Center the content horizontally */
-}
 
-button {
-  padding: 10px 20px; 
-  margin-top: 20px; 
-  width: auto; 
-  max-width: 200px;
-  background-color: #3498db; 
-  color: white; 
-  border: none;
-  border-radius: 5px;
-  cursor: pointer; 
-  text-align: center; 
-}
+

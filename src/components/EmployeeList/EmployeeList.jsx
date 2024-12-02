@@ -72,7 +72,7 @@ const EmployeeList = () => {
 
   return (
     <div>
-      <h1>Employee List</h1>
+      <h2>Roster</h2>
       <div className="employee-list">
         {employees.map((employee) => (
           <EmployeeCard

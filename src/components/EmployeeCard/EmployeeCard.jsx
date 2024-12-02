@@ -1,7 +1,8 @@
 import { useState } from "react";
 import "./EmployeeCard.css";
-import Button from "../Button/Button";
-import CardForm from "../Form/CardForm";
+
+import CardForm from "../CardForm/CardForm";
+import ButtonUsage from "../Button/Button";
 
 function EmployeeCard({ initRole = "Employee", startDate, name = "Unknown", role = "", sector = "", email = "", onSave }) {
   const [formData, setFormData] = useState({
@@ -65,7 +66,7 @@ function EmployeeCard({ initRole = "Employee", startDate, name = "Unknown", role
       <p>Start Date: {startDate}</p>
       <p>Email: {formData.email}</p>
       <p>Years Employed: {yearsWorked}</p>
-      <Button onClick={toggleModal} text="Edit" />
+      <ButtonUsage onClick={toggleModal} text="Edit" />
 
       {/* Modal */}
       {isModalOpen && (
@@ -76,7 +77,7 @@ function EmployeeCard({ initRole = "Employee", startDate, name = "Unknown", role
             </button>
             <h3>Edit Employee Details</h3>
             <CardForm formData={formData} onFormChange={setFormData} />
-            <Button onClick={handleSave} text="Save" />
+            <ButtonUsage onClick={handleSave} text="Save" />
           </div>
         </div>
       )}

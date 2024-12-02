@@ -1,18 +1,81 @@
+import React from 'react';
+import { AppBar, Toolbar, Typography, Button, Box } from '@mui/material';
 import { Link, NavLink } from "react-router-dom";
-import "./Header.css"
 
-function Header() {
-    return (
-        <header>
-            <nav>
-            <h2><Link to="/">Employee Manager App</Link></h2>
-            <ul>
-                <li><NavLink to="/employees">Employees</NavLink></li>
-                <li><NavLink to="/form">Add New</NavLink></li>
-                
-            </ul>
-            </nav>
-        </header>
-    )
+export default function Header() {
+  return (
+    <AppBar position="static" sx={{ backgroundColor: '#333' }}>
+      <Toolbar
+        sx={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          padding: { xs: '10px 20px', sm: '15px 40px' },
+        }}
+      >
+        {/* Left Section: App Title */}
+        <Typography
+          variant="h5"
+          component={NavLink}
+          to="/"
+          sx={{
+            textDecoration: 'none',
+            color: 'white',
+            fontWeight: 'bold',
+            letterSpacing: '1.5px',
+          }}
+        >
+          Employee Manager App
+        </Typography>
+
+        {/* Right Section: Navigation Links */}
+        <Box
+          sx={{
+            display: 'flex',
+            gap: 3,
+            alignItems: 'center',
+          }}
+        >
+          <Button
+            component={NavLink}
+            to="/employees"
+            sx={{
+              color: 'white',
+              textTransform: 'none',
+              '&.active': {
+                color: '#4CAF50',
+              },
+            }}
+          >
+            Employees
+          </Button>
+          <Button
+            component={NavLink}
+            to="/form"
+            sx={{
+              color: 'white',
+              textTransform: 'none',
+              '&.active': {
+                color: '#4CAF50',
+              },
+            }}
+          >
+            Add New
+          </Button>
+          <Button
+            component={NavLink}
+            to="/login"
+            sx={{
+              color: 'white',
+              textTransform: 'none',
+              '&.active': {
+                color: '#4CAF50',
+              },
+            }}
+          >
+            Log Out
+          </Button>
+        </Box>
+      </Toolbar>
+    </AppBar>
+  );
 }
-export default Header;

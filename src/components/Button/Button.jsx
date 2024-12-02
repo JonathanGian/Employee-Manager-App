@@ -1,9 +1,15 @@
-import "./Button.css"
+import * as React from 'react';
+import Button from '@mui/material/Button';
 
-const Button = ({text,onClick, type = "button", role })=>{
+
+const ButtonUsage = ({text,onClick, type = "button", role })=>{
     return (
-        <button className={role} onClick={onClick} type = {type}>{text}</button>
+        <Button variant="outlined"
+        sx={{
+    fontFamily: "'Chakra Petch', serif",
+  }}
+  className={role} onClick={onClick} type = {type}>{text}</Button>
     );
 };
 
-export default Button;
+export default ButtonUsage;
