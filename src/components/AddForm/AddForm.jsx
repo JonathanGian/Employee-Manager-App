@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Box, TextField, Button, Typography, Snackbar, Alert } from "@mui/material";
 import Grid from "@mui/material/Grid2";
+import useAxios from "../../services/useAxios";
+
 
 const AddForm = () => {
   const [formData, setFormData] = useState({
@@ -11,8 +13,8 @@ const AddForm = () => {
     email: "",
   });
 
-  const [success, setSuccess] = useState(false);
-  const [error, setError] = useState(false);
+
+ const {post} = useAxios("http://localhost:3001");
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState("");
   const [snackbarSeverity, setSnackbarSeverity] = useState("success"); // "success" or "error"
@@ -21,38 +23,22 @@ const AddForm = () => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:3001/employees", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
+      await post("employees", formData); // Use useAxios to make the POST request
+      setSnackbarMessage("Employee added successfully!");
+      setSnackbarSeverity("success");
+      setSnackbarOpen(true);
+      setFormData({
+        name: "",
+        role: "",
+        sector: "",
+        startDate: "",
+        email: "",
       });
-
-      if (response.ok) {
-        setSuccess(true);
-        setSnackbarMessage("Employee added successfully!");
-        setSnackbarSeverity("success");
-        setSnackbarOpen(true);
-        setFormData({
-          name: "",
-          role: "",
-          sector: "",
-          startDate: "",
-          email: "",
-        });
-      } else {
-        setError(true);
-        setSnackbarMessage("Failed to add employee.");
-        setSnackbarSeverity("error");
-        setSnackbarOpen(true);
-      }
     } catch (error) {
-      console.error("Error:", error);
+      console.error("Error adding employee:", error);
       setSnackbarMessage("An error occurred while adding the employee.");
       setSnackbarSeverity("error");
       setSnackbarOpen(true);
@@ -62,6 +48,7 @@ const AddForm = () => {
   const handleSnackbarClose = () => {
     setSnackbarOpen(false);
   };
+
 
   return (
     <Box
