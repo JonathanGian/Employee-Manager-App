@@ -1,7 +1,7 @@
 {
   "employees": [
     {
-      "name": "Alice Johnsond",
+      "name": "Alice Johnson",
       "role": "Employee",
       "sector": "Design",
       "email": "alice.johnson@example.com",
@@ -79,46 +79,6 @@
       "sector": "Quality Control",
       "startDate": "2021-12-05",
       "email": "jack.green@example.com"
-    },
-    {
-      "id": "c7b4",
-      "name": "tes",
-      "role": "dfsdf",
-      "sector": "dsf",
-      "startDate": "1111-11-11",
-      "email": "sfs@example.com"
-    },
-    {
-      "id": "a0c5",
-      "name": "test",
-      "role": "test",
-      "sector": "test",
-      "startDate": "2222-02-22",
-      "email": "test@e.com"
-    },
-    {
-      "id": "ba34",
-      "name": "f",
-      "role": "f",
-      "sector": "f",
-      "startDate": "0222-02-22",
-      "email": "f@g.com"
-    },
-    {
-      "id": "b313",
-      "name": "test",
-      "role": "test",
-      "sector": "test2",
-      "startDate": "1111-11-11",
-      "email": "jon@es.com"
-    },
-    {
-      "id": "44ed",
-      "name": "test3",
-      "role": "test3",
-      "sector": "test3",
-      "startDate": "2024-02-22",
-      "email": "te@c.com"
     }
   ],
   "persons": [

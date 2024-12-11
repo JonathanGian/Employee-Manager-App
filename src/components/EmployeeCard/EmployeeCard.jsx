@@ -1,8 +1,10 @@
 import React, { useState } from "react";
  import "./EmployeeCard.css";
 import useAxios from "../../services/useAxios";
-import { Modal, Box, Button, TextField, Typography } from "@mui/material";
+import { Modal, Box, Button, TextField, Typography, Card, CardContent, CardActions, Avatar, CardHeader } from "@mui/material";
 import { useEmployeeStatus } from "../../hooks/useEmployeeStatus";
+import { useNavigate } from "react-router-dom";
+
 const EmployeeCard = ({
   id,
   name,
@@ -14,13 +16,7 @@ const EmployeeCard = ({
   onUpdate,
   fetchEmployees
 }) => {
-  const {
-    yearsWorked,
-    monthsWorked,
-    daysUntilNextAnniversary,
-    isProbation,
-    isAnniversary,
-  } = useEmployeeStatus(startDate);
+  const {isProbation,isAnniversary,} = useEmployeeStatus(startDate);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [formData, setFormData] = useState({ 
   name,
@@ -29,6 +25,7 @@ const EmployeeCard = ({
   email,
   startDate });
   const { put } = useAxios("http://localhost:3001"); // Custom hook for Axios requests
+const navigate = useNavigate();
 
   // Toggle modal visibility
   const toggleModal = () => {
@@ -45,35 +42,59 @@ const EmployeeCard = ({
   const handleSave = async () => {
     try {
       const updatedEmployee = await put(`employees/${id}`, formData).then(()=>fetchEmployees()); 
-      if (onUpdate) onUpdate(updatedEmployee); // Notify parent about the update
-      console.log("Before toggle:", isModalOpen);
-      toggleModal();
-    //  window.location.reload();
+      if (onUpdate) onUpdate(updatedEmployee); 
     } catch (error) {
       console.error("Error updating employee:", error);
     }
   };
+    // Handle navigation to details page
+    const handleSeeMore = () => {
+      navigate(`/details/${id}`); // Navigate to the details page for this employee
+    };
+  
 
   return (
-    <div>
-    <div className="EmployeeCard">
-      <img
-        src={avatarUrl}
-        alt={`${name}'s avatar`}
-        className="employee-avatar"
-        style={{ width: "100px", height: "100px", borderRadius: "50%" }}
-      />
-      <h2>{name}</h2>
-      <p>Role: {role}</p>
-      <p>Sector: {sector}</p>
-      <p>Email: {email}</p>
-      <p>Start Date: {startDate}</p>
-      {isProbation && <p style={{ color: "orange" }}>On Probation</p>}
-      {isAnniversary && <p style={{ color: "green" }}>Work Anniversary! 🎉</p>}
-      <Button variant="contained" onClick={toggleModal}>
-        Edit
-      </Button>
-    </div>
+<Card  sx={{ maxWidth: 400, margin: "16px auto", padding: 2, borderRadius: 2, boxShadow: 3 }}>
+      <CardContent>
+        <CardHeader title={name} color="text.primary" /> 
+        <Avatar
+          src={avatarUrl}
+          alt={`${name}'s avatar`}
+          sx={{ width: 100, height: 100, margin: "0 auto", marginBottom: 2 }}
+        />
+      
+        <Typography variant="body1" color="text.secondary">
+          Role: {role}
+        </Typography>
+        <Typography variant="body1" color="text.secondary">
+          Sector: {sector}
+        </Typography>
+        <Typography variant="body1" color="text.secondary">
+          Email: {email}
+        </Typography>
+        <Typography variant="body1" color="text.secondary">
+          Start Date: {startDate}
+        </Typography>
+        {isProbation && (
+          <Typography variant="body2" color="warning.main">
+            On Probation
+          </Typography>
+        )}
+        {isAnniversary && (
+          <Typography variant="body2" color="success.main">
+            Work Anniversary! 🎉
+          </Typography>
+        )}
+      </CardContent>
+      <CardActions>
+        <Button variant="contained" color="primary" onClick={toggleModal}>
+          Edit
+        </Button>
+        <Button variant="outlined" color="secondary" onClick={handleSeeMore}>
+          See More
+        </Button>
+      </CardActions>
+
       {/* Modal for editing employee details */}
       <Modal open={isModalOpen} onClose={toggleModal}>
         <Box
@@ -147,7 +168,7 @@ const EmployeeCard = ({
           </Button>
         </Box>
       </Modal>
-    </div>
+    </Card>
   );
 };
 

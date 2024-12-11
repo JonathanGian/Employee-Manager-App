@@ -5,6 +5,7 @@ import Login from "../pages/Login";
 import List from "../pages/List";
 import Form_Page from "../pages/Form_Page";
 import AddForm from "../components/AddForm/AddForm";
+import Details from "../pages/Details/Details";
 
 
 export const router = createBrowserRouter(
@@ -18,6 +19,7 @@ export const router = createBrowserRouter(
           { path: "/login", element: <Login /> },
           { path: "/employees", element: <List /> },
           { path: "/form", element: <AddForm /> },
+          { path: "/details/:id", element: <Details />},
         ],
       },
     ],
