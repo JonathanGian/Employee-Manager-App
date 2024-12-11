@@ -3,7 +3,7 @@ import axios from 'axios';
 
 // Custom hook for Axios requests
 const useAxios = (baseUrl) => {
-  const [data, setData] = useState(null); 
+  const [data, setData] = useState([]); 
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
