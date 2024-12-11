@@ -4,7 +4,6 @@ import "./EmployeeList.css";
 import useAxios from "../../services/useAxios";
 
 const EmployeeList = () => {
-  const [employees, setEmployees] = useState([]); // State for employee data
   const { data, loading, error, get } = useAxios("http://localhost:3001"); 
 
   // Fetch employees on component mount
@@ -18,13 +17,12 @@ const EmployeeList = () => {
   const fetchEmployees = async () => {
     try {
       await get("employees");
-      console.log("Data:", data);
-      setEmployees(data); // Update employees with the fetched data
     } catch (err) {
       console.error("Failed to fetch employees:", err);
     }
   };
-  // Conditional rendering based on loading and error states
+
+
   if (loading) {
     return <h2>Loading employees...</h2>;
   }
