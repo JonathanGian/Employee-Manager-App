@@ -1,18 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Hina+Mincho&display=swap');
 :root {
-  font-family: "Hina Mincho", "Chakra Petch", sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  --header: "Chakra Petch";
-  --body: "Hina Mincho";
+  /* Palette */
+  --color-primary-main: #1976d2; /* Blue */
+  --color-secondary-main: #ff4081; /* Pink */
+  --color-background-default: #f4f6f8; /* Light gray */
+  --color-background-paper: #ffffff; /* White for cards or paper components */
+  --color-text-primary: #333333; /* Dark gray for primary text */
+  --color-text-secondary: #666666; /* Lighter gray for secondary text */
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* Typography */
+  --font-family-base: 'Chakra Petch', 'Libre Caslon Display', 'Arial', sans-serif;
+  --font-family-heading: 'Libre Caslon Display', 'Arial', sans-serif;
+  --font-family-body: 'hina mincho', serif;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --font-size-h1: 2.5rem;
+  --font-weight-h1: 700;
+
+  --font-size-h2: 2rem;
+  --font-weight-h2: 600;
+
+  --font-size-body1: 1.1rem;
+  --line-height-body1: 1.5;
+
+  --font-size-body2: 0.875rem;
+  --line-height-body2: 1.43;
+
+  /* Shape */
+  --border-radius: 8px; /* Global border radius for components */
 }
-

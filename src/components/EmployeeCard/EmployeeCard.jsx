@@ -4,7 +4,7 @@ import useAxios from "../../services/useAxios";
 import { Modal, Box, Button, TextField, Typography, Card, CardContent, CardActions, Avatar, CardHeader } from "@mui/material";
 import { useEmployeeStatus } from "../../hooks/useEmployeeStatus";
 import { useNavigate } from "react-router-dom";
-
+import StarPurple500TwoToneIcon from '@mui/icons-material/StarPurple500TwoTone';
 const EmployeeCard = ({
   id,
   name,
@@ -26,6 +26,14 @@ const EmployeeCard = ({
   startDate });
   const { put } = useAxios("http://localhost:3001"); // Custom hook for Axios requests
 const navigate = useNavigate();
+const [promoted, setPromoted] = useState(false);
+
+
+  // Toggle promotion status
+  const togglePromotion = () => {
+    setPromoted((prev) => !prev); 
+  };
+
 
   // Toggle modal visibility
   const toggleModal = () => {
@@ -54,27 +62,77 @@ const navigate = useNavigate();
   
 
   return (
-<Card  sx={{ maxWidth: 400, margin: "16px auto", padding: 2, borderRadius: 2, boxShadow: 3 }}>
+<Card
+      sx={{
+        maxWidth: 400,
+        margin: "16px auto",
+        padding: 2,
+        borderRadius: 2,
+        boxShadow: 3,
+        position: "relative", 
+      }}
+    >
+      {/* Star Icon in Top Right Corner */}
+      {promoted && (
+  <Box
+    sx={{
+      position: "absolute",
+      top: 16,
+      right: 16,
+      zIndex: 10,
+      color: "gold",
+      display: "flex",
+      alignItems: "center",
+      gap: "8px",
+    }}
+  >
+    <Typography
+      variant="body2"
+      sx={{ color: "#333", fontWeight: "bold" }}
+    >
+      Team Lead
+    </Typography>
+    <StarPurple500TwoToneIcon fontSize="large" />
+  </Box>
+)}
+    {/* Start of Card */}
       <CardContent>
-        <CardHeader title={name} color="text.primary" /> 
+        <CardHeader title={name} color="primary.main" />
+         
+       
         <Avatar
           src={avatarUrl}
           alt={`${name}'s avatar`}
           sx={{ width: 100, height: 100, margin: "0 auto", marginBottom: 2 }}
         />
       
-        <Typography variant="body1" color="text.secondary">
-          Role: {role}
-        </Typography>
-        <Typography variant="body1" color="text.secondary">
-          Sector: {sector}
-        </Typography>
-        <Typography variant="body1" color="text.secondary">
-          Email: {email}
-        </Typography>
-        <Typography variant="body1" color="text.secondary">
-          Start Date: {startDate}
-        </Typography>
+      <Typography variant="body1">
+  <Typography component="span" fontWeight="bold" color="primary">
+    Role:
+  </Typography>{" "}
+  {role}
+</Typography>
+<Typography variant="body1">
+  <Typography component="span" fontWeight="bold" color="primary">
+    Sector:
+  </Typography>{" "}
+  {sector}
+</Typography>
+<Typography variant="body1">
+  <Typography component="span" fontWeight="bold" color="primary">
+    Email:
+  </Typography>{" "}
+  {email}
+</Typography>
+<Typography variant="body2">
+  <Typography component="span" fontWeight="bold" color="primary">
+    Start Date:
+  </Typography>{" "}
+  {startDate}
+</Typography>
+
+
+        {/* Notifications */}
         {isProbation && (
           <Typography variant="body2" color="warning.main">
             On Probation
@@ -85,6 +143,7 @@ const navigate = useNavigate();
             Work Anniversary! 🎉
           </Typography>
         )}
+        
       </CardContent>
       <CardActions>
         <Button variant="contained" color="primary" onClick={toggleModal}>
@@ -92,6 +151,13 @@ const navigate = useNavigate();
         </Button>
         <Button variant="outlined" color="secondary" onClick={handleSeeMore}>
           See More
+        </Button>
+        <Button
+          variant="contained"
+          color={promoted ? "error" : "primary"}
+          onClick={togglePromotion}
+        >
+          {promoted ? "Demote" : "Promote"}
         </Button>
       </CardActions>
 

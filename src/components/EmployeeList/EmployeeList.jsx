@@ -6,17 +6,13 @@ import useAxios from "../../services/useAxios";
 const EmployeeList = () => {
   const { data, loading, error, get } = useAxios("http://localhost:3001"); 
   const [employees, setEmployees] = useState([]);
+
   // Fetch employees on component mount
   useEffect(() => {
     if (data.length === 0){
       fetchEmployees()
         
       }
-      
-      
-    
-    
-    
   }, []);
 
 
@@ -27,13 +23,8 @@ const EmployeeList = () => {
       console.error("Failed to fetch employees:", err);
     }
   };
-  const handleUpdateEmployee = (updatedEmployee) => {
-    setEmployees((prevEmployees) =>
-      prevEmployees.map((employee) =>
-        employee.id === updatedEmployee.id ? updatedEmployee : employee
-      )
-    );
-  };
+ 
+
 
   if (loading) {
     return <h2>Loading employees...</h2>;
@@ -59,7 +50,7 @@ const EmployeeList = () => {
             startDate={employee.startDate}
             email={employee.email}
             avatarUrl={`https://robohash.org/${encodeURIComponent(employee.name)}?set=set5`}
-            onUpdate={handleUpdateEmployee}
+            
             fetchEmployees={fetchEmployees}
           />
         ))}

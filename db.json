@@ -10,10 +10,10 @@
     },
     {
       "name": "Bob Smith",
-      "role": "Employee",
+      "role": "UI Design",
       "sector": "Software Developer",
-      "startDate": "2014-08-22",
       "email": "bob.smith@example.com",
+      "startDate": "2014-08-22",
       "id": "2"
     },
     {
@@ -33,12 +33,12 @@
       "id": "4"
     },
     {
-      "id": "5",
       "name": "Ella Davis",
       "role": "HR Manager",
       "sector": "Human Resources",
-      "startDate": "2019-05-20",
-      "email": "ella.davis@example.com"
+      "email": "ella.davis@example.com",
+      "startDate": "2018-05-20",
+      "id": "5"
     },
     {
       "id": "6",

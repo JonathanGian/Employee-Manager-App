@@ -30,7 +30,7 @@ const theme = createTheme({
       fontWeight: 600,
     },
     body1: {
-      fontSize: "1rem",
+      fontSize: "1.1rem",
       lineHeight: 1.5,
       fontFamily: "hina mincho, serif",
     },
