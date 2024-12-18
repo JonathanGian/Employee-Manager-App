@@ -5,6 +5,7 @@ import { Modal, Box, Button, TextField, Typography, Card, CardContent, CardActio
 import { useEmployeeStatus } from "../../hooks/useEmployeeStatus";
 import { useNavigate } from "react-router-dom";
 import StarPurple500TwoToneIcon from '@mui/icons-material/StarPurple500TwoTone';
+import ButtonUsage from "../Button/Button";
 const EmployeeCard = ({
   id,
   name,
@@ -97,35 +98,53 @@ const [promoted, setPromoted] = useState(false);
 )}
     {/* Start of Card */}
       <CardContent>
-        <CardHeader title={name} color="primary.main" />
-         
-       
+        <CardHeader
+        title={name}
+        color="primary.main"
+        />
         <Avatar
           src={avatarUrl}
           alt={`${name}'s avatar`}
           sx={{ width: 100, height: 100, margin: "0 auto", marginBottom: 2 }}
         />
       
-      <Typography variant="body1">
-  <Typography component="span" fontWeight="bold" color="primary">
+      <Typography
+      variant="body1">
+  <Typography
+  component="span"
+  fontWeight="bold"
+  color="primary">
     Role:
   </Typography>{" "}
   {role}
 </Typography>
-<Typography variant="body1">
-  <Typography component="span" fontWeight="bold" color="primary">
+<Typography
+variant="body1">
+  <Typography
+  component="span"
+  fontWeight="bold"
+  color="primary">
     Sector:
   </Typography>{" "}
   {sector}
 </Typography>
-<Typography variant="body1">
-  <Typography component="span" fontWeight="bold" color="primary">
+<Typography
+variant="body1">
+  <Typography
+  component="span"
+  fontWeight="bold"
+  color="primary">
     Email:
   </Typography>{" "}
   {email}
 </Typography>
-<Typography variant="body2">
-  <Typography component="span" fontWeight="bold" color="primary">
+<Typography
+variant="body2"
+>
+  <Typography
+  component="span"
+  fontWeight="bold"
+  color="primary">
     Start Date:
   </Typography>{" "}
   {startDate}
@@ -146,23 +165,37 @@ const [promoted, setPromoted] = useState(false);
         
       </CardContent>
       <CardActions>
-        <Button variant="contained" color="primary" onClick={toggleModal}>
-          Edit
-        </Button>
-        <Button variant="outlined" color="secondary" onClick={handleSeeMore}>
-          See More
-        </Button>
-        <Button
+
+        {/* Edit Button */}
+        <ButtonUsage
+        variant="contained"
+        color="primary"
+        onClick={toggleModal}
+        text={"Edit"}
+        />
+        
+        {/* See More Button */}
+        <ButtonUsage
+        variant="outlined"
+        color="secondary"
+        onClick={handleSeeMore}
+        text={"See More"}
+        />
+          
+        
+        {/* Promote Button */}
+        <ButtonUsage
           variant="contained"
           color={promoted ? "error" : "primary"}
           onClick={togglePromotion}
-        >
-          {promoted ? "Demote" : "Promote"}
-        </Button>
+          text={promoted ? "Demote" : "Promote"}
+        />
       </CardActions>
 
       {/* Modal for editing employee details */}
-      <Modal open={isModalOpen} onClose={toggleModal}>
+      <Modal
+      open={isModalOpen}
+      onClose={toggleModal}>
         <Box
           sx={{
             position: "absolute",
@@ -176,9 +209,14 @@ const [promoted, setPromoted] = useState(false);
             borderRadius: 2,
           }}
         >
-          <Typography variant="h6" gutterBottom fontFamily={"Chakra Petch"}>
+          <Typography
+          variant="h6"
+          gutterBottom
+          fontFamily={"Chakra Petch"}
+          >
             Edit Employee Details
           </Typography>
+
           <TextField
             fullWidth
             label="Name"

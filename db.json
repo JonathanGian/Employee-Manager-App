@@ -79,6 +79,14 @@
       "sector": "Quality Control",
       "startDate": "2021-12-05",
       "email": "jack.green@example.com"
+    },
+    {
+      "id": "42b7",
+      "name": "Jane Doe",
+      "role": "Cleaner",
+      "sector": "Maintance",
+      "startDate": "2010-06-15",
+      "email": "test@example.com"
     }
   ],
   "persons": [
