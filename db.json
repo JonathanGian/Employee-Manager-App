@@ -1,0 +1,89 @@
+{
+  "employees": [
+    {
+      "name": "Alice Johnson",
+      "role": "UI/UX Designer",
+      "sector": "Design",
+      "email": "alice.johnson@example.com",
+      "startDate": "2009-01-15",
+      "id": "1"
+    },
+    {
+      "name": "Bob Smith",
+      "role": "Backend Developer",
+      "sector": "Software Developer",
+      "email": "bob.smith@example.com",
+      "startDate": "2014-08-22",
+      "id": "2"
+    },
+    {
+      "name": "Carla Brown",
+      "role": "UI/UX Designer",
+      "sector": "Design",
+      "email": "carla.brown@example.com",
+      "startDate": "2019-04-10",
+      "id": "3"
+    },
+    {
+      "name": "David Wilson",
+      "role": "Employee",
+      "sector": "Analytics",
+      "startDate": "2024-10-03",
+      "email": "david.wilson@example.com",
+      "id": "4"
+    },
+    {
+      "name": "Ella Davis",
+      "role": "HR Manager",
+      "sector": "Human Resources",
+      "email": "ella.davis@example.com",
+      "startDate": "2018-05-20",
+      "id": "5"
+    },
+    {
+      "id": "6",
+      "name": "Frank Thomas",
+      "role": "Marketing Specialist",
+      "sector": "Marketing",
+      "startDate": "2021-03-18",
+      "email": "frank.thomas@example.com"
+    },
+    {
+      "id": "7",
+      "name": "Grace Lee",
+      "role": "Finance Analyst",
+      "sector": "Finance",
+      "startDate": "2022-07-25",
+      "email": "grace.lee@example.com"
+    },
+    {
+      "id": "8",
+      "name": "Henry Kim",
+      "role": "Operations Manager",
+      "sector": "Operations",
+      "startDate": "2020-10-30",
+      "email": "henry.kim@example.com"
+    },
+    {
+      "name": "Ivy Clark",
+      "role": "Customer Support",
+      "sector": "Support",
+      "startDate": "2023-02-14",
+      "email": "ivy.clark@example.com",
+      "id": "9"
+    },
+    {
+      "id": "10",
+      "name": "Jack Green",
+      "role": "Quality Assurance",
+      "sector": "Quality Control",
+      "startDate": "2021-12-05",
+      "email": "jack.green@example.com"
+    }
+  ],
+  "users": [
+    { "username": "admin", "password": "1234" },
+    { "username": "Jon", "password": "test" },
+    { "username": "Margit", "password": "foxes" }
+  ]
+}

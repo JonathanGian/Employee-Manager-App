@@ -1,10 +1,14 @@
-import "./Footer.css"
+import React from 'react';
+import { AppBar, Toolbar, Typography } from '@mui/material';
 
-export function Footer() {
-    return (
-        <footer>
-            <p>Copywrite©Jonathan Gian 2024</p>
-            <p>Contact:</p>
-        </footer>
-    )
+export default function Footer() {
+  return (
+    <AppBar position="static" sx={{ backgroundColor: '#222', mt: 'auto' }}>
+      <Toolbar sx={{ justifyContent: 'center' }}>
+        <Typography variant="body2" sx={{ color: 'white' }}>
+         Jonathan Gian &copy; {new Date().getFullYear()} Employee Manager App. All rights reserved
+        </Typography>
+      </Toolbar>
+    </AppBar>
+  );
 }

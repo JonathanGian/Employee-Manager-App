@@ -1,21 +1,15 @@
-import './App.css'
-import { Footer } from './components/Footer/Footer.jsx'
-import EmployeeList from "./components/EmployeeList/EmployeeList.jsx"
-import { Header } from './components/Header/Header.jsx'
+import { RouterProvider } from "react-router-dom";
+import { router } from "./routes/appRoutes";
 
 function App() {
-  
   return (
-    <>
-     <div id='page'>
-      <Header/>
-    <main>
-     <EmployeeList />
-     </main>
-     <Footer/>
-     </div>
-    </>
-  )
+    <RouterProvider
+      router={router}
+      future={{
+        v7_startTransition: true,
+      }}
+    />
+  );
 }
 
-export default App
+export default App;
