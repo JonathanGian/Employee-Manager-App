@@ -18,11 +18,13 @@ const AddForm = () => {
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState("");
   const [snackbarSeverity, setSnackbarSeverity] = useState("success"); // "success" or "error"
-
+// Keeps tghe form data in sync with the input fields
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
+
+  /* Submiting new employee */
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -44,7 +46,7 @@ const AddForm = () => {
       setSnackbarOpen(true);
     }
   };
-
+/* Close snackbar */
   const handleSnackbarClose = () => {
     setSnackbarOpen(false);
   };

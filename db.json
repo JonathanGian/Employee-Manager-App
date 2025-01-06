@@ -2,7 +2,7 @@
   "employees": [
     {
       "name": "Alice Johnson",
-      "role": "Employee",
+      "role": "UI/UX Designer",
       "sector": "Design",
       "email": "alice.johnson@example.com",
       "startDate": "2009-01-15",
@@ -10,7 +10,7 @@
     },
     {
       "name": "Bob Smith",
-      "role": "UI Design",
+      "role": "Backend Developer",
       "sector": "Software Developer",
       "email": "bob.smith@example.com",
       "startDate": "2014-08-22",
@@ -18,10 +18,10 @@
     },
     {
       "name": "Carla Brown",
-      "role": "Employee",
+      "role": "UI/UX Designer",
       "sector": "Design",
-      "startDate": "2019-04-10",
       "email": "carla.brown@example.com",
+      "startDate": "2019-04-10",
       "id": "3"
     },
     {
@@ -79,48 +79,6 @@
       "sector": "Quality Control",
       "startDate": "2021-12-05",
       "email": "jack.green@example.com"
-    },
-    {
-      "id": "42b7",
-      "name": "Jane Doe",
-      "role": "Cleaner",
-      "sector": "Maintance",
-      "startDate": "2010-06-15",
-      "email": "test@example.com"
-    }
-  ],
-  "persons": [
-    {
-      "id": "1",
-      "title": "json-server-1",
-      "author": "Jon"
-    },
-    {
-      "id": "2",
-      "title": "json-server-2",
-      "author": "Bob"
-    },
-    {
-      "id": "3",
-      "title": "json-server-3",
-      "author": "Ellie"
-    }
-  ],
-  "comments": [
-    {
-      "id": "1",
-      "body": "1 comment",
-      "postId": 1
-    },
-    {
-      "id": "2",
-      "body": "2 comment",
-      "postId": 2
-    },
-    {
-      "id": "3",
-      "body": "3 comment",
-      "postId": 3
     }
   ],
   "profile": {

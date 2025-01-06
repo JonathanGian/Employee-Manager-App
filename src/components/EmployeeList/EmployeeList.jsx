@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import EmployeeCard from "../EmployeeCard/EmployeeCard";
-import "./EmployeeList.css";
+import styles from "./EmployeeList.module.css";
 import useAxios from "../../services/useAxios";
 
 const EmployeeList = () => {
-  const { data, loading, error, get } = useAxios("http://localhost:3001"); 
-  const [employees, setEmployees] = useState([]);
+  const { data, error,loading, get } = useAxios("http://localhost:3001"); 
 
   // Fetch employees on component mount
   useEffect(() => {
@@ -39,7 +38,7 @@ const EmployeeList = () => {
   return (
     <div>
       <h2>Roster</h2>
-      <div className="employee-list">
+      <div className={styles.employeeList}>
         {data.map((employee) => (
           <EmployeeCard
             key={employee.id}

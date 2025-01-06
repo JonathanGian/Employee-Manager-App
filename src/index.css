@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Hina+Mincho&display=swap');
+
+/* Mostly used MUI so these are not used  */
 :root {
   /* Palette */
   --color-primary-main: #1976d2; /* Blue */

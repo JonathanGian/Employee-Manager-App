@@ -4,8 +4,7 @@ import ErrorPage from "../pages/ErrorPage";
 import Login from "../pages/Login";
 import List from "../pages/List";
 import Form_Page from "../pages/Form_Page";
-import AddForm from "../components/AddForm/AddForm";
-import Details from "../pages/Details/Details";
+import Details from "../pages/Details";
 
 
 export const router = createBrowserRouter(
@@ -18,7 +17,7 @@ export const router = createBrowserRouter(
           { path: "/", element: <Login /> },
           { path: "/login", element: <Login /> },
           { path: "/employees", element: <List /> },
-          { path: "/form", element: <AddForm /> },
+          { path: "/form", element: <Form_Page /> },
           { path: "/details/:id", element: <Details />},
         ],
       },

@@ -1,6 +1,6 @@
 import React from 'react';
 import { AppBar, Toolbar, Typography, Button, Box } from '@mui/material';
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -42,7 +42,7 @@ export default function Header() {
               color: 'white',
               textTransform: 'none',
               '&.active': {
-                color: '#4CAF50',
+                color: 'secondary.main',
               },
             }}
           >
@@ -55,7 +55,7 @@ export default function Header() {
               color: 'white',
               textTransform: 'none',
               '&.active': {
-                color: '#4CAF50',
+                color: 'secondary.main',
               },
             }}
           >
@@ -68,7 +68,7 @@ export default function Header() {
               color: 'white',
               textTransform: 'none',
               '&.active': {
-                color: '#4CAF50',
+                color: 'secondary.main',
               },
             }}
           >
