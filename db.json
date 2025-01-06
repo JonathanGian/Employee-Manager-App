@@ -49,12 +49,12 @@
       "email": "frank.thomas@example.com"
     },
     {
-      "id": "7",
       "name": "Grace Lee",
       "role": "Finance Analyst",
       "sector": "Finance",
+      "email": "grace.lee@example.com",
       "startDate": "2022-07-25",
-      "email": "grace.lee@example.com"
+      "id": "7"
     },
     {
       "id": "8",
@@ -82,8 +82,17 @@
     }
   ],
   "users": [
-    { "username": "admin", "password": "1234" },
-    { "username": "Jon", "password": "dev" },
-    { "username": "Margit", "password": "foxes" }
+    {
+      "username": "admin",
+      "password": "1234"
+    },
+    {
+      "username": "Jon",
+      "password": "dev"
+    },
+    {
+      "username": "Margit",
+      "password": "foxes"
+    }
   ]
 }
