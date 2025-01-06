@@ -1,6 +1,6 @@
 import React from "react";
 import { useUser } from "../context/UserContext";
-import { Box, Typography, Button,Avatar} from "@mui/material";
+import { Box, Typography, Button} from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 const WelcomePage = () => {

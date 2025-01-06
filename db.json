@@ -83,7 +83,7 @@
   ],
   "users": [
     { "username": "admin", "password": "1234" },
-    { "username": "Jon", "password": "test" },
+    { "username": "Jon", "password": "dev" },
     { "username": "Margit", "password": "foxes" }
   ]
 }

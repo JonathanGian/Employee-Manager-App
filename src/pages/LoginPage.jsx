@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useUser } from "../context/UserContext";
-import { Box, TextField, Button, Typography } from "@mui/material";
+import { Box, TextField, Button, Typography,Tooltip,IconButton } from "@mui/material";
+import { HelpOutline, HelpOutlined,HelpCenter } from "@mui/icons-material";
 import axios from "axios"; // For server requests
 import { useNavigate } from "react-router-dom";
 
@@ -24,7 +25,7 @@ const LoginPage = () => {
 
             if (user) {
                 login(username); // Log the user in
-                setError(null); // Clear any previous error
+                setError(null);
                 navigate("/welcome")
             } else {
                 setError("Invalid username or password");
@@ -72,6 +73,16 @@ const LoginPage = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 sx={{ marginBottom: 2, width: "300px" }}
             />
+            <Box sx={{ display: "flex", alignItems: "center", marginBottom: 2}}>
+        <Typography variant="body2" sx={{ marginRight: 1 }}>
+          Need help?
+        </Typography>
+        <Tooltip title="Username is 'Margit', Password is 'foxes' or 'Jon' and 'dev' ">
+          <IconButton>
+            <HelpOutline />
+          </IconButton>
+        </Tooltip>
+      </Box>
             <Button
                 variant="contained"
                 color="primary"
