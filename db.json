@@ -81,7 +81,9 @@
       "email": "jack.green@example.com"
     }
   ],
-  "profile": {
-    "name": "Jon"
-  }
+  "users": [
+    { "username": "admin", "password": "1234" },
+    { "username": "Jon", "password": "test" },
+    { "username": "Margit", "password": "foxes" }
+  ]
 }

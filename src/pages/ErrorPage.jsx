@@ -7,9 +7,12 @@ const ErrorPage = () => {
   const navigate = useNavigate();
 
   const handleGoBack = () => {
-    navigate(-1); // Navigate to the previous page
+    if (window.history.state && window.history.length > 1) {
+      navigate(-1);
+    } else {
+      navigate("/"); 
+    }
   };
-
   const handleGoHome = () => {
     navigate("/"); // Navigate to the homepage
   };

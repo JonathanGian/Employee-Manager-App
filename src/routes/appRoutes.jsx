@@ -5,8 +5,9 @@ import Login from "../pages/Login";
 import List from "../pages/List";
 import Form_Page from "../pages/Form_Page";
 import Details from "../pages/Details";
-
-
+import LoginPage from "../pages/LoginPage";
+import ProtectedRoute from "../components/ProtectedRoutes/ProtectedRoutes";
+import WelcomePage from "../pages/Welcome";
 export const router = createBrowserRouter(
     [
       {
@@ -14,11 +15,38 @@ export const router = createBrowserRouter(
         element: <Root />,
         errorElement: <ErrorPage />,
         children: [
-          { path: "/", element: <Login /> },
-          { path: "/login", element: <Login /> },
-          { path: "/employees", element: <List /> },
-          { path: "/form", element: <Form_Page /> },
-          { path: "/details/:id", element: <Details />},
+          { path: "/", element: <LoginPage /> },
+          { path: "/login", element: <LoginPage /> },
+          {
+            path: "/welcome",
+            element: (
+              <ProtectedRoute>
+                <WelcomePage />
+              </ProtectedRoute>
+            ),
+          },
+          { path: "/employees",
+            element: (
+              <ProtectedRoute>
+                <List />
+              </ProtectedRoute>
+            ),
+          },
+          { path: "/form",
+            element: (
+              <ProtectedRoute>
+                <Form_Page />
+              </ProtectedRoute>
+            ),
+            },
+          {
+            path: "/details/:id",
+            element: (
+              <ProtectedRoute>
+                <Details />
+              </ProtectedRoute>
+            ),
+          },
         ],
       },
     ],
