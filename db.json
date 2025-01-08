@@ -1,3 +1,5 @@
+ this file is not used but its the dataset for the employees and users and is hosted on a mock server using Render and JSON server
+
 {
   "employees": [
     {
