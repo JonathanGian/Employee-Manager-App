@@ -188,7 +188,6 @@ const Details = () => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            justifyContent: "center",
             marginLeft: 0,
             width: 200,
             height: 200,

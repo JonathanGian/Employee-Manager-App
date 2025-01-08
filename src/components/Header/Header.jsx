@@ -3,6 +3,7 @@ import { AppBar, Toolbar, Typography, Button, Box,Avatar,MenuItem,Menu } from '@
 import { NavLink,useNavigate } from "react-router-dom";
 import { useUser } from '../../context/UserContext';
 import { useState } from 'react';
+
 export default function Header() {
   const { user, logout } = useUser();
   const [anchorEl, setAnchorEl] = useState(null);
@@ -21,7 +22,7 @@ export default function Header() {
     navigate("/login");
     handleMenuClose();
   };
-
+  const firstLetter = user?.username?.charAt(0) || "";
 
   return (
     <AppBar position="static" sx={{ backgroundColor: '#333' }}>
@@ -87,7 +88,7 @@ export default function Header() {
               sx={{ bgcolor: "secondary.main", cursor: "pointer" }}
               onClick={handleMenuOpen}
             >
-              {user.charAt(0).toUpperCase()} {/* Show first letter of the username */}
+              {firstLetter} {/* Show first letter of the username */}
             </Avatar>
             <Menu
               anchorEl={anchorEl}

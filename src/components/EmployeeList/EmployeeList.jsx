@@ -18,7 +18,6 @@ const EmployeeList = () => {
   const fetchEmployees = async () => {
     try {
         const response = await get("employees");
-        console.log("Fetched employees:", response);
     } catch (err) {
         console.error("Failed to fetch employees:", err);
     }

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useUser } from "../context/UserContext";
 import { Box, TextField, Button, Typography,Tooltip,IconButton } from "@mui/material";
-import { HelpOutline, HelpOutlined,HelpCenter } from "@mui/icons-material";
+import { HelpOutline} from "@mui/icons-material";
 import axios from "axios"; // For server requests
 import { useNavigate } from "react-router-dom";
 
@@ -16,16 +16,18 @@ const LoginPage = () => {
         try {
             // Fetch credentials from the server
             const response = await axios.get("https://json-server-54mh.onrender.com/users"); 
-            console.log(response.data)
+            console.log("Response data",response.data)
             const users = response.data;
-
+            console.log("users",users)
             // Validate username and password
             const user = users.find(
                 (user) => user.username === username && user.password === password
             );
+            console.log("user",user)
 
             if (user) {
-                login(username); // Log the user in
+                login(user); // Log the user in
+                console.log(user)
                 setError(null);
                 navigate("/welcome")
             } else {

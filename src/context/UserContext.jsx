@@ -1,21 +1,29 @@
-import React, { createContext, useState, useContext } from "react";
+import React, { createContext, useContext, useState } from "react";
 
-// Create the context
 const UserContext = createContext();
 
-// Custom hook for easier usage
-export const useUser = () => useContext(UserContext);
+export const useUser = () => {
+    return useContext(UserContext);
+};
 
-// UserProvider component
 export const UserProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+    const [user, setUser] = useState(null);
 
-  const login = (username) => setUser(username); // Set the user
-  const logout = () => setUser(null); // Clear the user
+    const login = (user) => {
+      if (user) {
+          setUser(user); // Set the logged-in user
+      } else {
+          throw new Error("Invalid username or password");
+      }
+  };
 
-  return (
-    <UserContext.Provider value={{ user, login, logout }}>
-      {children}
-    </UserContext.Provider>
-  );
+    const logout = () => {
+        setUser(null); // Clear the logged-in user
+    };
+
+    return (
+        <UserContext.Provider value={{ user, login, logout }}>
+            {children}
+        </UserContext.Provider>
+    );
 };
