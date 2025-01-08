@@ -14,7 +14,7 @@ const AddForm = () => {
   });
 
 
- const {post} = useAxios("http://localhost:3001");
+ const {post} = useAxios("https://json-server-54mh.onrender.com");
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState("");
   const [snackbarSeverity, setSnackbarSeverity] = useState("success"); // "success" or "error"

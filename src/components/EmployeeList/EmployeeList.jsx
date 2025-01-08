@@ -4,7 +4,7 @@ import styles from "./EmployeeList.module.css";
 import useAxios from "../../services/useAxios";
 
 const EmployeeList = () => {
-  const { data, error,loading, get } = useAxios("http://localhost:3001"); 
+  const { data, error,loading, get } = useAxios("https://json-server-54mh.onrender.com"); 
 
   // Fetch employees on component mount
   useEffect(() => {
@@ -17,11 +17,12 @@ const EmployeeList = () => {
 
   const fetchEmployees = async () => {
     try {
-      await get("employees");
+        const response = await get("employees");
+        console.log("Fetched employees:", response);
     } catch (err) {
-      console.error("Failed to fetch employees:", err);
+        console.error("Failed to fetch employees:", err);
     }
-  };
+};
  
 
 

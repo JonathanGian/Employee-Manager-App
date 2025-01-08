@@ -10,7 +10,7 @@ import ButtonUsage from "../components/Button/Button";
 const Details = () => {
   const { id } = useParams(); // Get the employee ID from the URL
   const navigate = useNavigate();
-  const { get, loading } = useAxios("http://localhost:3001");
+  const { get, loading } = useAxios("https://json-server-54mh.onrender.com");
   const [employee, setEmployee] = useState(null);
   const { yearsWorked, monthsWorked, daysUntilNextAnniversary } = useEmployeeStatus(employee?.startDate || null);
 

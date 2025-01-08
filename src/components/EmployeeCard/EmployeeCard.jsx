@@ -26,7 +26,7 @@ const EmployeeCard = ({
     email,
     startDate
   });
-  const { put } = useAxios("http://localhost:3001"); // Custom hook for Axios requests
+  const { patch } = useAxios("https://json-server-54mh.onrender.com"); // Custom hook for Axios requests
   const navigate = useNavigate();
   const [promoted, setPromoted] = useState(false);
 
@@ -64,7 +64,7 @@ const EmployeeCard = ({
   // Handle save operation
   const handleSave = async () => {
     try {
-      const updatedEmployee = await put(`employees/${id}`, formData).then(() => fetchEmployees());
+      const updatedEmployee = await patch(`employees/${id}`, formData).then(() => fetchEmployees());
       if (onUpdate) onUpdate(updatedEmployee);
     } catch (error) {
       console.error("Error updating employee:", error);

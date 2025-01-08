@@ -31,7 +31,7 @@ const useAxios = (baseUrl) => {
   // Shortcut methods for specific HTTP verbs
   const get = (endpoint) => request('get', endpoint);
   const post = (endpoint, payload) => request('post', endpoint, payload);
-  const put = (endpoint, payload) => request('put', endpoint, payload);
+  const patch = (endpoint, payload) => request('patch', endpoint, payload);
   const remove = (endpoint) => request('delete', endpoint);
 
   return {
@@ -40,7 +40,7 @@ const useAxios = (baseUrl) => {
     loading,
     get,
     post,
-    put,
+    patch,
     remove,
   };
 };

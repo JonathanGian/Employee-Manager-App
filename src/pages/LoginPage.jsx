@@ -15,7 +15,8 @@ const LoginPage = () => {
     const handleLogin = async () => {
         try {
             // Fetch credentials from the server
-            const response = await axios.get("http://localhost:3001/users"); // Replace with your server's endpoint
+            const response = await axios.get("https://json-server-54mh.onrender.com/users"); 
+            console.log(response.data)
             const users = response.data;
 
             // Validate username and password
