@@ -94,7 +94,7 @@ npm run dev
 
 <img src="./screenshot1.png" alt="Image of app login screen" width="1500">
 <img src="./screenshot2.png" alt="Image of employees list in app" width="1500">
-
+asdfasdf
 ## Sources
 
 - [GitHub Guides - masterin markdown](https://guides.github.com/features/mastering-markdown/)
@@ -124,5 +124,5 @@ Special thanks to my school and instructors for guiding me through this project.
         color: lightblue;
         font-weight:bold;
     }
-	
+
 </style>
