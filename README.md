@@ -1,26 +1,27 @@
 # HR Management App
 ![warning](https://img.shields.io/badge/Warning-Important-red?style=flat-square) **When launching the app for the first time it will take up to a minute for the backend server to start sending data. Just be patient after clicking login**
-#
-This project is a full-stack React application created as part of a school project to learn full-stack development with React. The app is designed to manage employees efficiently, including adding, editing, and viewing employee details.
-##
+
+[![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=JonathanGian_Countries-FullStack)](https://sonarcloud.io/summary/new_code?id=JonathanGian_Countries-FullStack)
+
 ### Features
--	<span class="highlight">Employee Management:</span>
-    - 	View a list of all employees.
-	-	Add new employees with key details.
-	-	Edit existing employee information.
-	-	Promote employees with role-based logic.
-- 	<span class="highlight">Mock User Login System:</span>
-	-	A simple login system that authenticates users based on credentials stored in the backend mock server.
-	-	Includes pre-defined users with usernames and passwords for testing.
-	-	Different users experience personalized views (e.g., a custom welcome message for the user “Margit”).
-- 	<span class="highlight">React Concepts:</span>
-	-	State management for dynamic updates.
-	-	Component-based architecture.
-	-	Props for passing data between components.
-- 	<span class="highlight">Backend Integration:</span>
-	-	Connected to a JSON server hosted on Render for data persistence.
-	-	Fetch and update employee and user data in real time.
-##
+
+- <span class="highlight">Employee Management:</span>
+  - 	View a list of all employees.
+  -	Add new employees with key details.
+  -	Edit existing employee information.
+  -	Promote employees with role-based logic.
+- <span class="highlight">Mock User Login System:</span>
+  -	A simple login system that authenticates users based on credentials stored in the backend mock server.
+  -	Includes pre-defined users with usernames and passwords for testing.
+  -	Different users experience personalized views (e.g., a custom welcome message for the user “Margit”).
+- <span class="highlight">React Concepts:</span>
+  -	State management for dynamic updates.
+  -	Component-based architecture.
+  -	Props for passing data between components.
+- <span class="highlight">Backend Integration:</span>
+  - Connected to a JSON server hosted on Render for data persistence.
+  -	Fetch and update employee and user data in real time.
+
 ### Goals
 
 The primary goal of this project was to:

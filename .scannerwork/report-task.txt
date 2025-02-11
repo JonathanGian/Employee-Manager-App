@@ -1,0 +1,6 @@
+projectKey=Real-HR-App
+serverUrl=http://localhost:9000
+serverVersion=25.2.0.102705
+dashboardUrl=http://localhost:9000/dashboard?id=Real-HR-App
+ceTaskId=e5aee7ff-a3a7-4368-aac8-728a0ee095a0
+ceTaskUrl=http://localhost:9000/api/ce/task?id=e5aee7ff-a3a7-4368-aac8-728a0ee095a0
